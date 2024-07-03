@@ -10,6 +10,6 @@
 
 ## 🗒️ Future goals to implement 🔧✨
 
-- 🔍 Better UI 👀 [ ]
-- 🖥️ The Page after Login 🔓 [ ]
-- 💡 More Interesting Elements to make it vivid and fancy 💎 [ ]
+- 🔍 Better UI 👀 
+- 🖥️ The Page after Login 🔓
+- 💡 More Interesting Elements to make it vivid and fancy 💎
