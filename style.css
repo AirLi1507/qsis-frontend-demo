@@ -233,7 +233,7 @@ span.sq {
 .sq3 {background-color: #044cf3;}
 .sq4 {background-color: #f20d20;}
 
-div#logo:hover > .sq0 {transform: rotate(20turn);}
+div#logo:hover > .sq0 {transform: rotate(20.125turn);}
 
 span.qsis {
 
