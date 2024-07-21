@@ -1,377 +1,711 @@
-html {
-    padding: 0;
-    margin: 0;
-    height: 100%;
+/* Variables - Start */
+
+:root {
+    --circle-size-1: 44px;
+    --circle-size-2: 36px;
+
+    --acsent-color-1: #00356B;
+    --acsent-color-2: #387580;
+    --mobile-hover-color: #389aab;
+    --border-1: 2px rgba(165, 225, 255, 0.3) solid;
+    --border-color-1: rgb(152, 196, 235);
+    --text-shadow-1: 1px 1px 5px rgba(40, 103, 133, 0.3);
+  }
+
+/* Variables - Ended */
+
+
+/* Animations - Start */
+
+@keyframes fade-in {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes circle {
+    from {
+        border-radius: 0;
+        margin: 0 0;
+    } to {
+        width: var(--circle-size-2);
+        height: var(--circle-size-2);
+        border-radius: 50%;
+        margin: auto;
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.75s ease forwards;
+}
+
+.fade-out {
+    animation: fade-out 1s ease forwards;
+}
+
+/* Animations - End */
 
 body {
-    background-image: url(images/organization_background_image.jpg);
-    background-size: cover;
-    padding: 0;
+
+    height: 100dvh;
+    width: 100dvw;
+
     margin: 0;
-    height: 93.5%;
-    overflow: hidden;
-}
+    padding: 0;
 
-div#background {
-    -webkit-backdrop-filter: blur(1.5px);
-    backdrop-filter: blur(1.5px);
-    background-color: rgba(78, 78, 78, 0.45);
-    height: 100%;
-    padding: 1.5%;
-}
-
-div#box {
-    background-image: url(images/organization_background_image.jpg);
     background-size: cover;
-    box-shadow: 2px 2px 15px rgb(0, 0, 0, 0.55);
-    height: 100%;
-    border-radius: 30px;
+    background-repeat: no-repeat;
+
+    background-image:  url('images/organization_background_image.jpg');
+    -webkit-backdrop-filter: brightness(0.6);
+    backdrop-filter: brightness(0.6);
+
+    box-shadow: inset 0 0 3vh rgba(255, 255, 255, 0.5);
+
 }
 
-div#container {
-    display: flex;
-    height: 100%;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    background-color: rgba(210, 231, 255, 0.4);
-    border-radius: 30px;
-    justify-content: start;
-    flex-direction: row;
+/* Font Size - Start */
+
+.fs-1 {
+    font-size: 5px;
 }
 
-div#vertical-bottom {
+.fs-2 {
+    font-size: 10px;
+}
+
+.fs-3 {
+    font-size: 15px;
+}
+
+.fs-4 {
+    font-size: 20px;
+}
+
+.fs-5 {
+    font-size: 25px;
+}
+
+.fs-6 {
+    font-size: 30px;
+}
+
+.fs-7 {
+    font-size: 35px;
+}
+
+.fs-8 {
+    font-size: 40px;
+}
+
+.fs-9 {
+    font-size: 45px;
+}
+
+.fs-10 {
+    font-size: 50px
+}
+
+.fs-12 {
+    font-size: 62.5px;
+}
+
+.fs-15 {
+    font-size: 75px
+}
+
+
+.fs-20 {
+    font-size: 100px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Font Size - Ended */
+
+div#bg {
+
+    position: absolute;
+
+    width: calc(100vw - 4.6vh);
+    height: calc(100vh - 4.6vh);
+
+    top: 2.3vh;
+    left: 2.3vh;
+
+    background-size: cover;
+    background-image: url('images/organization_background_image.jpg');
+    filter: saturate(1.3);
+    -webkit-backdrop-filter: saturate(0.5);
+    border-radius: calc(1vw + 1vh);
+    box-shadow: inset 0px 0px 1.5vh rgb(0, 0, 0, 0.7);
+
+    padding: 2vh;
+    box-sizing: border-box;
+
     display: flex;
-    justify-content: end;
-    flex-direction: column;
-    height: 100%;
-    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+
+    animation: fade-in 1s ease forwards;
+
 }
 
 div#login-box {
-    display: flex;
-    height: 450px;
-    width: 400px;
-    background-color: rgb(207, 219, 241, 0.6);
-    margin-right: 100px;
-    margin-bottom: 50px;
-    border-radius: 18px;
-    border-color: rgb(104, 127, 138);
-    border-style: solid;
-    border-width: 1.5px;
-    box-shadow: 2px 2px 10px rgb(128, 128, 128, 0.6);
-    flex-direction: column;
-    align-items: flex-end;
-}
 
+    width: 350px;
 
+    background-color: rgba(180, 240, 255, 0.2);
+    border: 2px rgba(165, 225, 255, 0.3) solid;
+    border-radius: 16px;   
+    box-shadow: 0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1.2vh);
+    -webkit-backdrop-filter: blur(1.2vh);
 
-div.horizontal {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#logo-custom {
-    height: 100px;
-    margin-right: 20px;
-    transition: transform 25s ease;
-    border-radius: 50px;
-}
-
-#logo-custom:hover {
-    transform: rotate(10800deg);
-}
-
-#newsis {
-    color: #00356B;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: bold;
-    font-size: 55px;
-    margin: 0;
-    letter-spacing: -0.75px;
-}
-
-div.vertical {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    height: 100%;
-    padding-right: 15px;
+
 }
 
-div.input-text {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-p.input {
-    color: #396692;
-    text-shadow: 2px 2px rgb(202, 214, 224);
-    margin-top: 0;
-    margin-bottom: 5px;
-    text-align: end;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-size: 24.5px;
-    width: fit-content;
-}
-
-span.material-symbols-outlined {
-    color: #396692;
-    padding-top: 2px;
-    margin-right: 5px;
-}
-
-input#id {
-    margin-left: auto;
-    width: 265px;
-    height: 50px;
-    border-radius: 12px;
-    background-color: rgb(211, 219, 228);
-    transition: 0.2s ease-out;
-    border-color: rgb(152, 196, 235);
-    border-style: solid;
-    outline: 0;
-}
-
-input#id:focus {
-    background-color: rgb(240, 248, 255, 0.8) ;
-}
-
-#user-password {
-    color: #396692;
-    text-shadow: 2px 2px rgb(202, 214, 224);
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: right;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-size: 24.5px;
-}
-
-input#password {
-    margin-left: auto;
-    width: 265px;
-    height: 50px;
-    border-radius: 12px;
-    background-color: rgb(211, 219, 228);
-    transition: 0.2s ease-out;
-    border-color: rgb(152, 196, 235 );
-    border-style: solid;
-    outline: 0;
-}
-
-input#password:focus {
-    background-color: rgb(240, 248, 255, 0.8) ;
-}
-
-input[type="text"] {
-    color: rgb(56, 77, 83);
-    font-size: 20px;
-    text-align: right;
-    padding-right: 10px;
-}
-
-input[type="password"] {
-    color: rgb(56, 77, 83);
-    font-size: 20px;
-    text-align: right;
-    padding-right: 10px;
-}
-
-
-
-button#login-btn {
-    cursor: pointer;
-    color: #396692;
-    background: transparent;
-    background: linear-gradient(to left, #287bce 50%, rgb(211, 219,228) 50%) left;
-    background-size: 200%;
-    border: solid;
-    width: 140px;
-    height: 50px;
-    border-width: 2px;
-    border-radius: 12px;
-    border-color: rgb(152, 196, 235);
-    font-size: 22.5px;
-    font-weight: 400;
-    font-family: "Ubuntu", sans-serif;
-    transition: 0.45s ease-out;
-    margin: 20px 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-button#login-btn:hover {
-    background-position: right;
-    color: aliceblue;
-}
-
-#btn-symbol {
-    transition: 0.45s ease-out;
-}
-
-button#login-btn:hover #btn-symbol{
-    color: aliceblue;
-}
-
-a#forget {
-    margin-left: auto;
-    width: fit-content;
-    text-decoration: none;
-    transition: 0.55s ease;
-    border-bottom: solid 2px transparent;
-}
-
-#forget-pw {
-    color: #4375a7;
-    text-shadow: 2px 2px rgb(202, 214, 224);
-    margin-top: 0;
-    margin-bottom: 5px;
-    text-align: end;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    width: fit-content;
-    transition: 0.45s ease;
-}
-
-.forget-symbol {
-    transition: 0.45s ease;
-}
-
-a#forget:hover {
-    border-bottom: solid 2px rgb(207, 225, 241);
-}
-
-a#forget:hover #forget-pw {
-    color: aliceblue;
-    text-shadow: 0 0 4.5px lightskyblue;
-}
-
-a#forget:hover .forget-symbol {
-    color: aliceblue;
-    text-shadow: 0 0 4.5px lightskyblue;
-}
-
-
-
-div.welcome {
-    display: flex;
-    margin-left: 40px;
-    justify-content: start;
-    flex-direction: column;
-}
-
-p.welcome {
-    font-size: 70px;
-    font-weight: 600;
-    font-family: "Ubuntu", sans-serif;
-    color: white;
-    text-shadow: -4px -4px 1px rgb(151, 215, 240);
-    margin-top: 0;
-    margin-bottom: 0;
-}   
-
-div#space {
-    height: 80px;
-}
-
-span#typing {
-    font-size: 70px;
-    font-weight: 800;
-    font-family: "Ubuntu", sans-serif;
-    color:#6eabe7;
-    text-shadow: -4px -4px 1px #4375a7;
-}
-
-
-
-
-/*iPad Gen 9 Responsive CSS Section Start*/
-
-@media only screen and (max-device-width: 1024px) and (orientation:landscape) {
-
-    body {
-        height: 95.25%;
-        overflow: hidden;
-    }
-    div#login-box {
-        display: flex;
-        height: 450px;
-        width: 400px;
-        background-color: rgb(207, 219, 241, 0.6);
-        margin-right: 50px;
-        margin-bottom: 50px;
-        border-radius: 18px;
-        border-color: rgb(104, 127, 138);
-        border-style: solid;
-        border-width: 1.5px;
-        box-shadow: 2px 2px 10px rgb(128, 128, 128, 0.6);
-        flex-direction: column;
-        align-items: flex-end;
-    }
+div#logo {
     
-    img#logo-custom {
-        height: 90px;
-        margin-right: 20px;
-        transition: transform 25s ease;
-        border-radius: 50px;
-    }
+    width: 124.5px;
+    height: 124.5px;
 
-    #newsis {
-        color: #00356B;
-        font-family: "Ubuntu", sans-serif;
-        font-weight: bold;
-        font-size: 45px;
-        margin: 0;
-        letter-spacing: -0.75px;
-    }
+    margin: 35px auto 10px auto;
 
-    .input {
-        color: #396692;
-        text-shadow: 2px 2px rgb(202, 214, 224);
-        margin-top: 0;
-        margin-bottom: 5px;
-        text-align: end;
-        font-family: "Ubuntu", sans-serif;
-        font-weight: 400;
-        font-size: 220.5px;
-        width: fit-content;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    div.welcome {
-        display: flex;
-        margin-left: 20px;
-        justify-content: start;
-        flex-direction: column;
-    }
-
-    p.welcome {
-        font-size: 60px;
-        font-weight: 600;
-        font-family: "Ubuntu", sans-serif;
-        color: white;
-        text-shadow: -4px -4px 1px rgb(151, 215, 240);
-        margin-top: 0;
-        margin-bottom: 0;
-    }   
-
-    div#space {
-        height: 70px;
-    }
-
-    span#typing {
-        font-size: 60px;
-        font-weight: 800;
-        font-family: "Ubuntu", sans-serif;
-        color:#6eabe7;
-        text-shadow: -4px -4px 1px #4375a7;
-    }
 }
 
-/*iPad Gen 9 Responsive CSS Section Ended*/
+div.sq0 {
+
+    width: calc(var(--circle-size-1) * 2);
+    height: calc(var(--circle-size-1) * 2);
+
+    display: grid;
+    grid-template-columns: auto auto;
+
+    transform: rotate(45deg);
+
+    transition: 26s ease;
+
+}
+
+span.sq {
+
+    box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.6);
+
+    display: block;
+
+    transition: all 0.5s ease;
+
+}
+
+.sq1 {background-color: #f9b115;}
+.sq2 {background-color: #b64b30;}
+.sq3 {background-color: #044cf3;}
+.sq4 {background-color: #f20d20;}
+
+div#logo:hover > .sq0 {transform: rotate(20turn);}
+
+span.qsis {
+
+    color: var(--acsent-color-1);
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+
+    margin: 0 auto;
+
+}
+
+label.input-hint {
+
+    margin: 10px 0 4px 22px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+a.input-hint {
+
+    width: fit-content;
+    
+    margin: 12px 0 7px 22px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+span.fg-pw {
+
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+
+    color: #387580;
+    text-shadow: var(--text-shadow-1);
+    font-weight: 550;
+
+    transition: all 0.3s ease;
+
+}
+
+a.input-hint:hover .fg-pw {
+
+    color: aliceblue;
+
+}
+
+span.input-hint {
+
+    color: var(--acsent-color-2);
+    text-shadow: var(--text-shadow-1);
+    font-weight: 550;
+
+}
+
+span.symbol, span.symbol2 {font-family: 'Material Symbols Outlined'; color: var(--acsent-color-2)}
+
+span.input-hint {
+
+    font-family: "Open Sans", sans-serif;
+
+    margin-left: 6px;
+    
+}
+
+div.input-div {
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+
+    width: 88%;
+    height: 10%;
+
+    margin: 0 auto;
+
+    background-color: rgb(255, 255, 255, 0.3);
+    border-radius: 12px;
+    border: 0.13vh var(--border-color-1) solid;
+
+    outline: 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    transition: background-color 0.3s ease;
+
+}
+
+#pw-label {margin-top: 20px;}
+
+input#id-fleid, input#pw-fleid {
+
+    color: var(--acsent-color-1);
+
+    width: 100%;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+
+    background-color: transparent;
+    border: none;
+
+    padding: 12px;
+
+    outline: 0;
+
+}
+
+span#view-pw {
+
+    position: static;
+
+    margin: auto 0;
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+input#submit {
+
+    color: var(--acsent-color-2);
+    font-weight: 550;
+
+    width: 88%;
+    height: 55px;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    background-color: rgb(255, 255, 255, 0.3);
+    border-radius: 12px;
+    border: 0.13vh var(--border-color-1) solid;
+
+    padding: 0;
+
+    outline: 0;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: var(--acsent-color-2);
+
+}
+
+div.input-div:hover, label#pw-label:hover + div#password, label#id-label:hover + div#id {
+
+    background-color: rgba(240, 248, 255, 0.6);
+
+}
+
+input#submit:hover {
+
+    color: aliceblue;
+
+    background-color: var(--acsent-color-2);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* QSIS Main Section Start */
+
+div#main {
+
+    margin-right: auto;
+
+    opacity: 0.5;
+
+    display: none;
+
+}
+
+nav#vert {
+
+    position: relative;
+
+    width: 15dvw;
+    height: 90dvh;
+
+    background-color: rgba(180, 240, 255, 0.2);
+    border: var(--border-1);
+    border-radius: 2vh;
+    box-shadow: 0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1.4vh);
+    -webkit-backdrop-filter: blur(1.4vh);
+
+    padding-bottom: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+
+}
+
+div#horizontal {
+
+    width: 80%;
+
+    margin: 30px auto 0 auto;
+
+    border-bottom: 2px var(--acsent-color-2) solid;
+
+    padding-bottom: 2.4dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img#logo2 {
+
+    width: calc(2vh + 2vw);
+    height: calc(2vh + 2vw);
+
+    margin: 0 calc(1vh + 1vw) 0 20px;
+
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+    transform: rotate(45deg);
+
+    transition: transform 25s ease;
+
+}
+
+span.qsis2 {
+
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: calc(2vw + 1vh);
+    text-align: center;
+    color: var(--acsent-color-1);
+
+}
+
+ul#list-1 {
+
+    height: 100%;
+
+    margin: 20px 0 0 calc(1vh + 1.2vw);
+    
+    padding: 0;
+
+}
+
+li.nav-item-1 {
+
+    list-style: none;
+
+    width: fit-content;
+
+    margin-bottom: 1vh;
+
+    color: var(--acsent-color-2);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: calc(0.65vw + 0.65vh);
+    text-shadow: var(--text-shadow-1);
+
+    border-bottom: 2px transparent solid;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+li.nav-item-1:hover {
+
+    border-bottom: 2px var(--acsent-color-2) solid;
+
+    transform: translateX(15px);
+
+}
+
+span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
+
+#bottom {position: absolute; bottom: 8px;}
+
+/* Universal Responsive for QSIS Main - Start */
+
+@media screen and (max-width: 1580px) {
+
+    div#qsis-main {width: calc(5vh + 17vw);}
+
+    nav#vert {position: unset; width: 100%;}
+
+    div#horizontal {
+
+        margin-top: 1vh;
+    
+        padding-bottom: 0.2vh;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    img#logo2 {
+
+        width: 70px;
+        height: 70px;
+
+        margin: 15px auto;
+
+    }    
+
+    span.qsis2 {
+
+        font-family: "Poppins";
+        font-size: 32px;
+
+    }
+
+    ul#list-1 {margin: 15px 0 0 0; padding: 10px 0 10px calc(0.15vh + 1.05vw); box-sizing: border-box; overflow: scroll; -ms-overflow-style: none;  scrollbar-width: none;}
+
+    span.symbol2 {font-size: calc(0.9vw + 2.4vh); margin-right: 10px;}
+
+    li.nav-item-1 {
+
+        width: fit-content;
+
+        font-size: calc(0.8vw + 0.9vh);
+
+        margin-bottom: 8px;
+
+
+    }
+
+    li.nav-item-1:hover {transform: translateX(1.3vh);}
+
+    #bottom {position: unset; margin-top: 45px;}
+
+}
+
+/* Universal Responsive for QSIS Main - Ended */
+
+/* QSIS Main Section Ended */
+
+
+
+
+
+
+
+
+
+
+
+/* iPad Landsacpe Responsive CSS Section Start */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+    div#bg {
+
+        height: calc(100dvh - 5dvh);
+
+    }
+
+}
+
+/* iPad Landsacpe Responsive CSS Section Ended */
+
+/* iPad Portrait Responsive CSS Section Start */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+
+    div#bg {
+
+        width: calc(100dvw - 4dvh);
+        height: calc(100dvh - 4dvh);
+    
+        top: 2dvh;
+        left: 2dvh;
+
+        overflow: hidden;
+
+    }
+
+    ul#list-1 {margin: 15px 0 0 0; padding-left: calc(0.1vh + 1vw);}
+
+    div#qsis-main {width: calc(5vh + 21vw);}
+
+    li.nav-item-1:hover {transform: translateX(0.8vh);}
+
+    #bottom {position: absolute; bottom: 8px;}
+
+}
+
+/* iPad Portrait Responsive CSS section Ended */
+/* Mobile Portrait Responsive CSS section Start */
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+
+    body {overflow: hidden;}
+
+    div#bg {
+
+        width: calc(100vw - 3.7dvh);
+        height: calc(100dvh - 3.7dvh);
+
+        top: 1.85dvh;
+        left: 1.85dvh;
+
+        padding: 0 0 0 10px;
+
+        overflow: hidden;
+
+    }
+
+    div#login-box {
+
+        max-width: 80%;
+
+    }
+
+    span.qsis2 {
+        
+        display: none;
+
+    }
+
+    div#horizontal {width: 70%;}
+
+    div#qsis-main {width: calc(7vh + 4.5vw);}
+
+    img#logo2 {width: 40px; height: 40px; margin-bottom: 20px;}
+
+    ul#list-1 {width: fit-content; margin: 12px auto 0 auto; overflow: scroll;}
+
+    li.nav-item-1 {font-size: 0; border: unset; margin-bottom: 20px;}
+
+    li.nav-item-1:hover {border: unset; transform: unset;}
+
+    span.symbol2 {font-size: 35px; transition: 0.4s ease; border: 2.5px transparent solid; border-radius: 4px;}
+
+    span.symbol2:hover {color: var(--mobile-hover-color); border: 2.5px var(--mobile-hover-color) solid; border-radius: 10px;}
+
+    #bottom {position: unset; margin-top: 50px; border-top: 2px var(--acsent-color-2) solid; padding-top: 15px; box-sizing: border-box;}
+
+}
+
+/* Mobile Portrait Responsive CSS section Ended */
