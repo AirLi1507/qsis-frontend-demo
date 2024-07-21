@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>QSIS - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="fonts/material-symbols.css" />
+    <link rel="stylesheet" href="fonts/opensans.css">
+    <link rel="stylesheet" href="fonts/poppins.css">
+    <link rel="stylesheet" href="fonts/roboto.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="bg">
+            <div id="login-box">
+                <div id="logo">
+                    <div class="sq0">
+                        <span class="sq sq1"></span>
+                        <span class="sq sq2"></span>
+                        <span class="sq sq3"></span>
+                        <span class="sq sq4"></span>
+                    </div>
+                </div>
+
+                <span class="qsis fs-9 noselect">QSIS</span>
+
+                <label class="input-hint fs-5 noselect" id="id-label" for="id-fleid">
+                    <span class="symbol">tag</span><span class="input-hint">User ID</span>
+                </label>
+                <div class="input-div" id="id">
+                    <input type="text" class="fs-4" id="id-fleid">
+                </div>
+                <label class="input-hint fs-5 noselect" id="pw-label" for="pw-fleid">
+                    <span class="symbol">key</span><span class="input-hint">Password</span>
+                </label>
+                <div class="input-div" id="password" style="padding-right: 10px;">
+                    <input type="password" class="fs-4" id="pw-fleid">
+                    <span class="fs-5 symbol noselect" id="view-pw" onclick="showPw()">visibility</span>
+                </div>
+                <a class="input-hint fs-4 noselect">
+                    <span class="fg-pw symbol" style="margin-right: 6px;">help</span><span class="fg-pw">Forget Password</span>
+                </a>
+
+                <input type="submit" value="Login" id="submit" class="fs-4" onclick="login()">
+            </div>
+
+            <div id="main">
+                <div id="qsis-main">
+                    <nav id="vert">
+                        <div id="horizontal">
+                            <img src="images/square-logo.png" alt="" class="noselect" id="logo2">
+                            <span class="qsis2 fs-12 noselect">QSIS</span>
+                        </div>
+                        <ul id="list-1" class="noselect">
+                            <li class="nav-item-1"><span class="symbol2">home</span>Home</li>
+                            <li class="nav-item-1"><span class="symbol2">person</span>Student Profile</li>
+                            <li class="nav-item-1"><span class="symbol2">edit_note</span>Homework</li>
+                            <li class="nav-item-1"><span class="symbol2">library_books</span>Extension Curriculum</li>
+                            <li class="nav-item-1"><span class="symbol2">two_pager</span>Reading</li>
+                            <li class="nav-item-1"><span class="symbol2">check_box</span>Subject Selection</li>
+                            <li class="nav-item-1"><span class="symbol2">help_center</span>Support</li>
+                            <li class="nav-item-1"><span class="symbol2">photo_library</span>Class Album</li>
+
+                            <div id="bottom">
+                            <li class="nav-item-1"><span class="symbol2">manage_accounts</span>Administration</li>
+                            <li class="nav-item-1"><span class="symbol2">settings</span>Settings</li>
+                            <li class="nav-item-1" onclick="setTimeout(() => {window.location.reload()}, 300);"><span class="symbol2">logout</span>Logout</li>
+                            </div>
+                            
+                        </ul>
+                    </nav>
+    
+                </div>
+            </div>
+        </div>
+        <script src="javascript/effects.js"></script>
+        <script src="/javascript/login.js"></script>
+</body>
+</html>
