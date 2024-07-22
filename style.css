@@ -344,7 +344,7 @@ input#id-fleid, input#pw-fleid {
 
 }
 
-::-ms-reveal {display: none;}
+input[type="password" i]::-ms-reveal {display: none;}
 
 span#view-pw {
 
