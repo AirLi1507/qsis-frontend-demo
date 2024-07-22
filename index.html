@@ -12,46 +12,52 @@
     <link rel="stylesheet" href="fonts/poppins.css">
     <link rel="stylesheet" href="fonts/roboto.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
         <div id="bg">
             <div id="login-box">
-                <div id="logo">
-                    <div class="sq0">
-                        <span class="sq sq1"></span>
-                        <span class="sq sq2"></span>
-                        <span class="sq sq3"></span>
-                        <span class="sq sq4"></span>
+                <div id="school-brand1">
+                    <div id="logo">
+                        <div class="sq0">
+                            <span class="sq sq1"></span>
+                            <span class="sq sq2"></span>
+                            <span class="sq sq3"></span>
+                            <span class="sq sq4"></span>
+                        </div>
                     </div>
+                    
+                    <span class="qsis fs-9 noselect">QSIS</span>
                 </div>
 
-                <span class="qsis fs-9 noselect">QSIS</span>
+                <div id="login-form">
+                    <label class="input-hint fs-5 noselect" id="id-label" for="id-fleid">
+                        <span class="symbol">tag</span><span class="input-hint">User ID</span>
+                    </label>
+                    <div class="input-div" id="id">
+                        <input type="text" class="fs-4" id="id-fleid">
+                    </div>
+                    <label class="input-hint fs-5 noselect" id="pw-label" for="pw-fleid">
+                        <span class="symbol">key</span><span class="input-hint">Password</span>
+                    </label>
+                    <div class="input-div" id="password" style="padding-right: 10px;">
+                        <input type="password" class="fs-4" id="pw-fleid">
+                        <span class="fs-5 symbol noselect" id="view-pw" onclick="showPw()">visibility</span>
+                    </div>
+                    <a class="input-hint noselect">
+                        <span class="fg-pw symbol" style="margin-right: 6px;">help</span><span class="fg-pw">Forget Password</span>
+                    </a>
 
-                <label class="input-hint fs-5 noselect" id="id-label" for="id-fleid">
-                    <span class="symbol">tag</span><span class="input-hint">User ID</span>
-                </label>
-                <div class="input-div" id="id">
-                    <input type="text" class="fs-4" id="id-fleid">
+                    <input type="submit" value="Login" id="submit" class="fs-4" onclick="login()">
                 </div>
-                <label class="input-hint fs-5 noselect" id="pw-label" for="pw-fleid">
-                    <span class="symbol">key</span><span class="input-hint">Password</span>
-                </label>
-                <div class="input-div" id="password" style="padding-right: 10px;">
-                    <input type="password" class="fs-4" id="pw-fleid">
-                    <span class="fs-5 symbol noselect" id="view-pw" onclick="showPw()">visibility</span>
-                </div>
-                <a class="input-hint fs-4 noselect">
-                    <span class="fg-pw symbol" style="margin-right: 6px;">help</span><span class="fg-pw">Forget Password</span>
-                </a>
 
-                <input type="submit" value="Login" id="submit" class="fs-4" onclick="login()">
             </div>
 
             <div id="main">
                 <div id="qsis-main">
                     <nav id="vert">
-                        <div id="horizontal">
-                            <img src="images/square-logo.png" alt="" class="noselect" id="logo2">
+                        <div id="school-brand2">
+                            <img src="images/logo-square.png" alt="" class="noselect" id="logo2">
                             <span class="qsis2 fs-12 noselect">QSIS</span>
                         </div>
                         <ul id="list-1" class="noselect">
@@ -67,9 +73,8 @@
                             <div id="bottom">
                             <li class="nav-item-1"><span class="symbol2">manage_accounts</span>Administration</li>
                             <li class="nav-item-1"><span class="symbol2">settings</span>Settings</li>
-                            <li class="nav-item-1" onclick="setTimeout(() => {window.location.reload()}, 300);"><span class="symbol2">logout</span>Logout</li>
+                            <li class="nav-item-1" onclick="logout()"><span class="symbol2">logout</span>Logout</li>
                             </div>
-                            
                         </ul>
                     </nav>
     
@@ -77,6 +82,6 @@
             </div>
         </div>
         <script src="javascript/effects.js"></script>
-        <script src="javascript/login.js"></script>
+        <script src="javascript/auth_system.js"></script>
 </body>
 </html>
