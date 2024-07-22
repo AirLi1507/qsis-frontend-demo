@@ -17,24 +17,6 @@
 
 /* Animations - Start */
 
-@keyframes fade-in {
-    from {
-        opacity: 0.5;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
 @keyframes circle {
     from {
         border-radius: 0;
@@ -45,10 +27,6 @@
         border-radius: 50%;
         margin: auto;
     }
-}
-
-.fade-in {
-    animation: fade-in 0.75s ease forwards;
 }
 
 .fade-out {
@@ -191,6 +169,13 @@ div#login-box {
 
 }
 
+div#school-brand1 {
+    
+    display: flex;
+    flex-direction: column;
+
+}
+
 div#logo {
     
     width: 124.5px;
@@ -201,6 +186,8 @@ div#logo {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    -webkit-tap-highlight-color: transparent;
 
 }
 
@@ -245,6 +232,13 @@ span.qsis {
 
 }
 
+div#login-form {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
 label.input-hint {
 
     margin: 10px 0 4px 22px;
@@ -258,6 +252,8 @@ label.input-hint {
 }
 
 a.input-hint {
+
+    font-size: 20px;
 
     width: fit-content;
     
@@ -293,22 +289,16 @@ a.input-hint:hover .fg-pw {
 }
 
 span.input-hint {
-
+    
     color: var(--acsent-color-2);
+    font-family: "Roboto", sans-serif;
     text-shadow: var(--text-shadow-1);
-    font-weight: 550;
+
+    margin-left: 6px;
 
 }
 
 span.symbol, span.symbol2 {font-family: 'Material Symbols Outlined'; color: var(--acsent-color-2)}
-
-span.input-hint {
-
-    font-family: "Open Sans", sans-serif;
-
-    margin-left: 6px;
-    
-}
 
 div.input-div {
 
@@ -384,7 +374,7 @@ input#submit {
 
     outline: 0;
 
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     cursor: pointer;
     -webkit-tap-highlight-color: var(--acsent-color-2);
@@ -421,7 +411,8 @@ div#main {
 
     margin-right: auto;
 
-    opacity: 0.5;
+    backdrop-filter: blur(1.4vh);
+    -webkit-backdrop-filter: blur(1.4vh);
 
     display: none;
 
@@ -438,8 +429,6 @@ nav#vert {
     border: var(--border-1);
     border-radius: 2vh;
     box-shadow: 0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(1.4vh);
-    -webkit-backdrop-filter: blur(1.4vh);
 
     padding-bottom: 10px;
     box-sizing: border-box;
@@ -453,11 +442,11 @@ nav#vert {
 
 }
 
-div#horizontal {
+div#school-brand2 {
 
     width: 80%;
 
-    margin: 30px auto 0 auto;
+    margin: 3vh auto 0 auto;
 
     border-bottom: 2px var(--acsent-color-2) solid;
 
@@ -498,15 +487,13 @@ ul#list-1 {
 
     height: 100%;
 
-    margin: 20px 0 0 calc(1vh + 1.2vw);
+    margin: 20px 0 0 calc(0.5vh + 0.7vw);
     
     padding: 0;
 
 }
 
 li.nav-item-1 {
-
-    list-style: none;
 
     width: fit-content;
 
@@ -518,30 +505,32 @@ li.nav-item-1 {
     font-size: calc(0.65vw + 0.65vh);
     text-shadow: var(--text-shadow-1);
 
-    border-bottom: 2px transparent solid;
+    border-bottom: 0.3vh transparent solid;
 
     display: flex;
     align-items: center;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 
     -webkit-tap-highlight-color: transparent;
+
+    white-space: nowrap;
 
 }
 
 li.nav-item-1:hover {
 
-    border-bottom: 2px var(--acsent-color-2) solid;
+    border-bottom: 0.3vh var(--acsent-color-2) solid;
 
-    transform: translateX(15px);
+    transform: translateX(1.5vh);
 
 }
 
 span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
-#bottom {position: absolute; bottom: 8px;}
+#bottom {position: absolute; width: auto; bottom: 8px;}
 
 /* Universal Responsive for QSIS Main - Start */
 
@@ -551,7 +540,7 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     nav#vert {position: unset; width: 100%;}
 
-    div#horizontal {
+    div#school-brand2 {
 
         margin-top: 1vh;
     
@@ -580,7 +569,7 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     }
 
-    ul#list-1 {margin: 15px 0 0 0; padding: 10px 0 10px calc(0.15vh + 1.05vw); box-sizing: border-box; overflow: scroll; -ms-overflow-style: none;  scrollbar-width: none;}
+    ul#list-1 {margin: 15px 0 0 0; padding: 10px 0 0px calc(0.15vh + 1.05vw); box-sizing: border-box; overflow: scroll; -ms-overflow-style: none;  scrollbar-width: none;}
 
     span.symbol2 {font-size: calc(0.9vw + 2.4vh); margin-right: 10px;}
 
@@ -709,3 +698,68 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 }
 
 /* Mobile Portrait Responsive CSS section Ended */
+/* Mobile Landscape Responsive CSS section Start */
+
+@media only screen and (max-height: 605px) and (orientation: landscape) {
+
+    body {overflow: hidden;}
+
+    div#bg {
+
+        width: calc(100vw - 4.2dvh);
+        height: calc(100dvh - 4.2dvh);
+
+        top: 2.1dvh;
+        left: 2.1dvh;
+
+        padding: 0 0 0 10px;
+
+        overflow: hidden;
+
+    }
+
+    div#login-box {
+
+        width: 60%;
+        max-height: 80%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    div#school-brand1 {margin-left: 15px; display: flex; flex-direction: column; justify-content: center;}
+
+    div#logo {margin: 0 20px 0 20px; transform: scale(95%);}
+
+    span.qsis {font-size: 38px;}
+
+    div.input-div {
+
+        height: 16%;
+
+    }
+
+    div#login-form {width: 80%; margin: 0 0 0 auto;}
+
+    label.input-hint, label#pw-label {
+
+        font-size: 23px;
+
+        margin: 10px 0 0 22px;
+
+    }
+
+    a.input-hint {font-size: 18px;}
+
+    input#submit {font-size: 18px; height: 16%; margin-bottom: 5px;}
+
+    img#logo2 {width: 55px; height: 55px; margin-bottom: 15px;}
+
+    span.qsis2 {font-size: 25px;}
+
+    li.nav-item-1 {font-size: 13px;}
+
+
+}
