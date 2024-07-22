@@ -344,6 +344,8 @@ input#id-fleid, input#pw-fleid {
 
 }
 
+input#id-fleid::-ms-reveal, input#id-fleid::-ms-clear, input#pw-fleid::-ms-reveal input#pw-fleid::-ms-clear {display: none;}
+
 span#view-pw {
 
     position: static;
