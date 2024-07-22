@@ -344,14 +344,6 @@ input#id-fleid, input#pw-fleid {
 
 }
 
-input::-ms-reveal,
-
-      input::-ms-clear {
-
-        display: none;
-
-      }
-
 span#view-pw {
 
     position: static;
