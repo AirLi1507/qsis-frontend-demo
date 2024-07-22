@@ -344,7 +344,13 @@ input#id-fleid, input#pw-fleid {
 
 }
 
-input#pw-fleid[type="password"]::-ms-reveal {display: none;}
+input::-ms-reveal,
+
+      input::-ms-clear {
+
+        display: none;
+
+      }
 
 span#view-pw {
 
