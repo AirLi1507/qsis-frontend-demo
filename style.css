@@ -6,10 +6,13 @@
 
     --acsent-color-1: #00356B;
     --acsent-color-2: #387580;
-    --mobile-hover-color: #389aab;
+    --active-color: #42a49f;
+    --box-shadow-1: 0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.3);
     --border-1: 2px rgba(165, 225, 255, 0.3) solid;
     --border-color-1: rgb(152, 196, 235);
-    --text-shadow-1: 1px 1px 5px rgba(40, 103, 133, 0.3);
+    --bg-color: rgba(180, 240, 255, 0.2);
+    --text-shadow-1: 1px 1px 5px rgba(40, 105, 133, 0.3);
+    --text-shadow-2: 1px 1px 8px rgba(143, 221, 255, 0.8);
   }
 
 /* Variables - Ended */
@@ -36,6 +39,8 @@
 /* Animations - End */
 
 body {
+
+    font-family: "Roboto", sans-serif;
 
     height: 100dvh;
     width: 100dvw;
@@ -149,16 +154,14 @@ div#bg {
     justify-content: center;
     align-items: center;
 
-    animation: fade-in 1s ease forwards;
-
 }
 
 div#login-box {
 
     width: 350px;
 
-    background-color: rgba(180, 240, 255, 0.2);
-    border: 2px rgba(165, 225, 255, 0.3) solid;
+    background-color: var(--bg-color);
+    border: var(--border-1);
     border-radius: 16px;   
     box-shadow: 0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(1.2vh);
@@ -298,7 +301,9 @@ span.input-hint {
 
 }
 
-span.symbol, span.symbol2 {font-family: 'Material Symbols Outlined'; color: var(--acsent-color-2)}
+span.symbol {color: var(--acsent-color-2)}
+
+span.symbol, span.symbol2 {font-family: 'Material Symbols Outlined';}
 
 div.input-div {
 
@@ -310,7 +315,7 @@ div.input-div {
 
     margin: 0 auto;
 
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: #ffffff4d;
     border-radius: 12px;
     border: 0.13vh var(--border-color-1) solid;
 
@@ -366,7 +371,7 @@ input#submit {
     margin: 0 auto;
     margin-bottom: 20px;
 
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: #ffffff4d;
     border-radius: 12px;
     border: 0.13vh var(--border-color-1) solid;
 
@@ -383,7 +388,7 @@ input#submit {
 
 div.input-div:hover, label#pw-label:hover + div#password, label#id-label:hover + div#id {
 
-    background-color: rgba(240, 248, 255, 0.6);
+    background-color: #f0f8ff99;
 
 }
 
@@ -409,12 +414,20 @@ input#submit:hover {
 
 div#main {
 
+    width: calc(100vw - 8.6vh);
+
     margin-right: auto;
 
-    backdrop-filter: blur(1.4vh);
-    -webkit-backdrop-filter: blur(1.4vh);
+    display: flex;
 
-    display: none;
+    box-sizing: border-box;
+
+}
+
+div#sidebar {
+
+    display: flex;
+    flex-direction: row;
 
 }
 
@@ -422,13 +435,15 @@ nav#vert {
 
     position: relative;
 
-    width: 15dvw;
+    width: 16.5vw;
     height: 90dvh;
 
-    background-color: rgba(180, 240, 255, 0.2);
+    background-color: var(--bg-color);
     border: var(--border-1);
     border-radius: 2vh;
-    box-shadow: 0.3vh 0.3vh 1vh rgba(0, 0, 0, 0.3);
+    box-shadow: var(--box-shadow-1);
+    backdrop-filter: blur(1.4vh);
+    -webkit-backdrop-filter: blur(1.4vh);
 
     padding-bottom: 10px;
     box-sizing: border-box;
@@ -439,7 +454,7 @@ nav#vert {
     overflow: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
-
+    
 }
 
 div#school-brand2 {
@@ -512,7 +527,7 @@ li.nav-item-1 {
 
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, border-bottom 0.21s ease, color 0.2s linear;
 
     -webkit-tap-highlight-color: transparent;
 
@@ -528,17 +543,83 @@ li.nav-item-1:hover {
 
 }
 
-span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
+li.nav-item-1:active {color: var(--active-color); border-bottom: 0.3vh var(--active-color) solid; text-shadow: var(--text-shadow-2); transition: 0.1s ease;}
+
+li.nav-item-1:active span.symbol2 {color: var(--active-color)}
+
+span.symbol2 {color: var(--acsent-color-2); font-size: 3.8vh; margin-right: 12px; transition: 0.1s ease;}
 
 #bottom {position: absolute; width: auto; bottom: 8px;}
+
+div#content {background-color: transparent;}
+
+div.tabs {
+
+    width: 79vw;
+    height: 90dvh;
+
+    margin-left: 1vw;
+
+    background-color: var(--bg-color);
+    border: var(--border-1);
+    border-radius: 2vh;
+    backdrop-filter: blur(1.3vh);
+    -webkit-backdrop-filter: blur(0.9vh);
+    box-shadow: var(--box-shadow-1);
+
+    padding: 2vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+h1.tabs-title {
+
+    color: var(--acsent-color-1);
+    font-size: 48px;
+
+    height: fit-content;
+    width: 85%;
+
+    margin: 20px 0 0 10px;
+
+    border-bottom: 0.4vh #00356B solid;
+
+    padding-bottom: 8px;
+
+}
+
+h2.tabs-heading1 {
+
+    color: var(--acsent-color-2);
+    font-weight: 300;
+    font-size: 35px;
+    text-shadow: var(--text-shadow-1);
+
+}
+
+/* Tab 1 - Start */
+
+div#box1 {
+
+    margin: 10px 0 0 10px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Tab 1 - Ended */
 
 /* Universal Responsive for QSIS Main - Start */
 
 @media screen and (max-width: 1580px) {
 
-    div#qsis-main {width: calc(5vh + 17vw);}
+    div#main {box-sizing: border-box;}
 
-    nav#vert {position: unset; width: 100%;}
+    nav#vert {width: 22vw;}
 
     div#school-brand2 {
 
@@ -588,6 +669,15 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     #bottom {position: unset; margin-top: 45px;}
 
+    div#content {background-color: transparent;}
+
+    div.tabs {
+
+        width: 74vw;
+        height: 90dvh;
+
+    }
+
 }
 
 /* Universal Responsive for QSIS Main - Ended */
@@ -614,6 +704,10 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     }
 
+    div.tabs {width: 75.5%; margin-left: 1.5%;}
+
+    h1.tabs-title {font-size: 35px;}
+
 }
 
 /* iPad Landsacpe Responsive CSS Section Ended */
@@ -634,13 +728,19 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     }
 
-    ul#list-1 {margin: 15px 0 0 0; padding-left: calc(0.1vh + 1vw);}
+    ul#list-1 {margin: 15px 0 0 0; padding-left: calc(0.1vh + 0.95vw);}
 
-    div#qsis-main {width: calc(5vh + 21vw);}
+    nav#vert {width: calc(5vh + 21vw);}
 
-    li.nav-item-1:hover {transform: translateX(0.8vh);}
+    div.tabs {width: 68.5%; margin-left: 3%;}
+
+    li.nav-item-1 {font-size: calc(0.7vw + 0.9vh);}
+
+    li.nav-item-1:hover {border-bottom: 0.185vh var(--acsent-color-2) solid; transform: translateX(0.8vh);}
 
     #bottom {position: absolute; bottom: 8px;}
+
+    h1.tabs-title {font-size: 35px;}
 
 }
 
@@ -659,7 +759,7 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
         top: 1.85dvh;
         left: 1.85dvh;
 
-        padding: 0 0 0 10px;
+        padding-left: 15px;
 
         overflow: hidden;
 
@@ -679,9 +779,13 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     div#horizontal {width: 70%;}
 
-    div#qsis-main {width: calc(7vh + 4.5vw);}
+    img#logo2 {width: 38px; height: 38px; margin-bottom: 20px;}
 
-    img#logo2 {width: 40px; height: 40px; margin-bottom: 20px;}
+    div#main {margin-right: 0;}
+
+    nav#vert {width: calc(7vh + 4.5vw);}
+    
+    div.tabs {width: 90.5%; margin-left: 5%;}
 
     ul#list-1 {width: fit-content; margin: 12px auto 0 auto; overflow: scroll;}
 
@@ -689,11 +793,13 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
 
     li.nav-item-1:hover {border: unset; transform: unset;}
 
-    span.symbol2 {font-size: 35px; transition: 0.4s ease; border: 2.5px transparent solid; border-radius: 4px;}
+    span.symbol2 {font-size: 35px; transition: 0.4s ease; border: 2.5px transparent solid; border-radius: 4px; transition: 0.4s ease;}
 
-    span.symbol2:hover {color: var(--mobile-hover-color); border: 2.5px var(--mobile-hover-color) solid; border-radius: 10px;}
+    span.symbol2:hover {color: var(--active-color); border: 2.5px var(--active-color) solid; border-radius: 10px;}
 
     #bottom {position: unset; margin-top: 50px; border-top: 2px var(--acsent-color-2) solid; padding-top: 15px; box-sizing: border-box;}
+
+    h1.tabs-title {font-size: 30px;}
 
 }
 
@@ -760,6 +866,5 @@ span.symbol2 {font-size: 3.8vh; margin-right: 12px;}
     span.qsis2 {font-size: 25px;}
 
     li.nav-item-1 {font-size: 13px;}
-
 
 }
