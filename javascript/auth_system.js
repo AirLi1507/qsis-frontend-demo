@@ -8,11 +8,22 @@ const pwFleid = document.getElementById('pw-fleid');
 idFleid.addEventListener("keypress", function(event) {if (event.key == "Enter") {pwFleid.focus()}});
 pwFleid.addEventListener("keypress", function(event) {if (event.key == "Enter") {login()}});
 
+$(qsisMain).hide();
+
 function login() {
+    
+    for (var i = 0; i < allTabs.length; i++) {
+        $(allTabs[i]).fadeOut(0)
+    }  
+
     $(loginBox).fadeOut(750);
     setTimeout(() => {
         $(qsisMain).fadeIn(700);
     }, 800);
+
+    setTimeout(() => {
+        showTab(1,document.querySelectorAll('li.nav-item-1')[0])
+    }, 850);
 }
 
 function showPw() {
@@ -28,8 +39,13 @@ function hidePw() {
 }
 
 function logout() {
-    setTimeout(() => {        
+    setTimeout(() => {
+
+        var FadeTab = "tab" + tabNo;
+
+        $('#' + FadeTab).fadeOut(500);
         $(qsisMain).fadeOut(500);
+        
     }, 300);
     setTimeout(() => {
         $(loginBox).fadeIn(300);
