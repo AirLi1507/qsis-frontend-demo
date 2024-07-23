@@ -13,7 +13,7 @@ $(qsisMain).hide();
 function login() {
     
     for (var i = 0; i < allTabs.length; i++) {
-        $(allTabs[i]).fadeOut(0)
+        $(allTabs[i]).hide()
     }  
 
     $(loginBox).fadeOut(750);
