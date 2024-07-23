@@ -32,9 +32,7 @@
     }
 }
 
-.fade-out {
-    animation: fade-out 1s ease forwards;
-}
+.fade-in {display: flex; animation: fade-in 1s ease;}
 
 /* Animations - End */
 
@@ -418,6 +416,9 @@ div#main {
 
     margin-right: auto;
 
+    backdrop-filter: blur(1.35vh);
+    -webkit-backdrop-filter: blur(1.35vh);
+
     display: flex;
 
     box-sizing: border-box;
@@ -442,8 +443,6 @@ nav#vert {
     border: var(--border-1);
     border-radius: 2vh;
     box-shadow: var(--box-shadow-1);
-    backdrop-filter: blur(1.4vh);
-    -webkit-backdrop-filter: blur(1.4vh);
 
     padding-bottom: 10px;
     box-sizing: border-box;
@@ -563,8 +562,6 @@ div.tabs {
     background-color: var(--bg-color);
     border: var(--border-1);
     border-radius: 2vh;
-    backdrop-filter: blur(1.3vh);
-    -webkit-backdrop-filter: blur(0.9vh);
     box-shadow: var(--box-shadow-1);
 
     padding: 2vh;
