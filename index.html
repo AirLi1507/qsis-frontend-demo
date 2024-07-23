@@ -38,7 +38,7 @@
 
                 <div id="login-form">
                     <label class="input-hint fs-5 noselect" id="id-label" for="id-fleid">
-                        <span class="symbol">tag</span><span class="input-hint">User ID</span>
+                        <span class="symbol">tag</span><span class="input-hint">Username</span>
                     </label>
                     <div class="input-div" id="id">
                         <input type="text" class="fs-4" id="id-fleid">
@@ -60,34 +60,105 @@
             </div>
 
             <div id="main">
-                <div id="qsis-main">
-                    <nav id="vert">
-                        <div id="school-brand2">
-                            <img src="images/logo-square.png" alt="" class="noselect" id="logo2">
-                            <span class="qsis2 fs-12 noselect">QSIS</span>
-                        </div>
-                        <ul id="list-1" class="noselect">
-                            <li class="nav-item-1"><span class="symbol2">home</span>Home</li>
-                            <li class="nav-item-1"><span class="symbol2">person</span>Student Profile</li>
-                            <li class="nav-item-1"><span class="symbol2">edit_note</span>Homework</li>
-                            <li class="nav-item-1"><span class="symbol2">library_books</span>Extension Curriculum</li>
-                            <li class="nav-item-1"><span class="symbol2">two_pager</span>Reading</li>
-                            <li class="nav-item-1"><span class="symbol2">check_box</span>Subject Selection</li>
-                            <li class="nav-item-1"><span class="symbol2">help_center</span>Support</li>
-                            <li class="nav-item-1"><span class="symbol2">photo_library</span>Class Album</li>
+                <nav id="vert">
+                    <div id="school-brand2">
+                        <img src="images/logo-square.png" alt="" class="noselect" id="logo2">
+                        <span class="qsis2 fs-12 noselect">QSIS</span>
+                    </div>
+                    <ul id="list-1" class="noselect">
+                        <li class="nav-item-1" onclick="showTab(1,this)"><span class="symbol2">home</span>Home</li>
+                        <li class="nav-item-1" onclick="showTab(2,this)"><span class="symbol2">person</span>Student Profile</li>
+                        <li class="nav-item-1" onclick="showTab(3,this)"><span class="symbol2">edit_note</span>Homework</li>
+                        <li class="nav-item-1" onclick="showTab(4,this)"><span class="symbol2">library_books</span>Extension Curriculum</li>
+                        <li class="nav-item-1" onclick="showTab(5,this)"><span class="symbol2">two_pager</span>Reading</li>
+                        <li class="nav-item-1" onclick="showTab(6,this)"><span class="symbol2">check_box</span>Subject Selection</li>
+                        <li class="nav-item-1" onclick="showTab(7,this)"><span class="symbol2">help_center</span>Support</li>
+                        <li class="nav-item-1" onclick="showTab(8,this)"><span class="symbol2">photo_library</span>Class Album</li>
 
-                            <div id="bottom">
-                            <li class="nav-item-1"><span class="symbol2">manage_accounts</span>Administration</li>
-                            <li class="nav-item-1"><span class="symbol2">settings</span>Settings</li>
-                            <li class="nav-item-1" onclick="logout()"><span class="symbol2">logout</span>Logout</li>
-                            </div>
-                        </ul>
-                    </nav>
+                        <div id="bottom">
+                        <li class="nav-item-1" onclick="showTab(9,this)"><span class="symbol2">manage_accounts</span>Administration</li>
+                        <li class="nav-item-1" onclick="showTab(10,this)"><span class="symbol2">settings</span>Settings</li>
+                        <li class="nav-item-1" onclick="logout()"><span class="symbol2">logout</span>Logout</li>
+                        </div>
+                    </ul>
+                </nav>
     
+                <div class="tabs" id="tab1">
+                    <h1 class="tabs-title">Home</h1>
+                    <div id="box1">
+
+                    </div>
                 </div>
+
+                <div class="tabs" id="tab2">
+                    <h1 class="tabs-title">Student Profile</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+                <div class="tabs" id="tab3">
+                    <h1 class="tabs-title">Homework</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+                <div class="tabs" id="tab4">
+                    <h1 class="tabs-title">Extension Curriculum</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+                <div class="tabs" id="tab5">
+                    <h1 class="tabs-title">Reading</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+                <div class="tabs" id="tab6">
+                    <h1 class="tabs-title">Subject Selection</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+                <div class="tabs" id="tab7">
+                    <h1 class="tabs-title">Support</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+                
+                <div class="tabs" id="tab8">
+                    <h1 class="tabs-title">Class Album</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+                <div class="tabs" id="tab9">
+                    <h1 class="tabs-title">Administration</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+                
+                <div class="tabs" id="tab10">
+                    <h1 class="tabs-title">Settings</h1>
+                    <div id="box1">
+
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
         <script src="javascript/effects.js"></script>
         <script src="javascript/auth_system.js"></script>
+        <script src="javascript/tab.js"></script>
 </body>
 </html>
