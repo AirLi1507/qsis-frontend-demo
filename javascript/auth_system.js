@@ -8,22 +8,21 @@ const pwFleid = document.getElementById('pw-fleid');
 idFleid.addEventListener("keypress", function(event) {if (event.key == "Enter") {pwFleid.focus()}});
 pwFleid.addEventListener("keypress", function(event) {if (event.key == "Enter") {login()}});
 
-$(qsisMain).hide();
-
 function login() {
     
     for (var i = 0; i < allTabs.length; i++) {
-        $(allTabs[i]).hide()
-    }  
+        $(allTabs[i]).fadeOut(0);
+    }
 
     $(loginBox).fadeOut(750);
     setTimeout(() => {
         $(qsisMain).fadeIn(700);
+        $('#sidebar').fadeIn(800);
     }, 800);
 
     setTimeout(() => {
-        showTab(1,document.querySelectorAll('li.nav-item-1')[0])
-    }, 850);
+        showTab(1,document.querySelectorAll('li.nav-item-1')[0]);
+    }, 900);
 }
 
 function showPw() {
@@ -41,10 +40,10 @@ function hidePw() {
 function logout() {
     setTimeout(() => {
 
-        var FadeTab = "tab" + tabNo;
+        var FadeTab = "#tab" + tabNo;
 
-        $('#' + FadeTab).fadeOut(500);
-        $(qsisMain).fadeOut(500);
+        $('#tab' + tabNo).fadeOut(500);
+        $('#sidebar').fadeOut(500);
         
     }, 300);
     setTimeout(() => {
