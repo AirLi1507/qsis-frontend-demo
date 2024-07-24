@@ -1,26 +1,17 @@
-// function showTab(tab) {
-//     var tabDivNo = "tab-div" + tab;
-//     var tabNo = "tab" + tab;
-//     document.getElementById(tabNo).style.color = '--var(--active-color)';
-//     console.log(tabNo);
-// }
-
-// $(document).ready(function() {
-//     $("#tab1").click(function(){console.log($(".nav-item-1").data("tab"))})
-// })
-
 const allTabs = document.querySelectorAll('.tabs');
 const allBtns = document.querySelectorAll('.nav-item-1');
 
 for (var i = 0; i < allTabs.length; i++) {
-    $(allTabs[i]).fadeOut(0)
+    $(allTabs[i]).fadeOut(1);
 }
+
+$('#sidebar').fadeOut(1);
 
 var tabNo = 0;
 
 function showTab(tab, btn) {
     var currentTab = "tab" + tab;
-    var tabNo = tab;
+    tabNo = tab;
 
     for (var i = 0; i < allTabs.length; i++) {
         if (allTabs[i].id === currentTab) {
@@ -39,17 +30,3 @@ function showTab(tab, btn) {
     btn.style.textShadow = "var(--text-shadow-2)";
     btn.style.color = "var(--active-color)";
 }
-
-// document.addEventListener("mouseclick", function() {
-
-//     var currentTab = "tab" + tab;
-
-//     for (var i = 0; i < allTabs.length; i++) {
-//         $(allTabs[i]).fadeOut(251)
-//     }
-
-//     setTimeout(() => {
-//         $(document.getElementById(currentTab)).fadeIn(260)
-//     }, 250);
-
-// })
