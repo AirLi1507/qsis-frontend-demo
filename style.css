@@ -410,21 +410,6 @@ input#submit:hover {
 
 /* QSIS Main Section Start */
 
-div#main {
-
-    width: calc(100vw - 8.6vh);
-
-    margin-right: auto;
-
-    backdrop-filter: blur(1.35vh);
-    -webkit-backdrop-filter: blur(1.35vh);
-
-    display: flex;
-
-    box-sizing: border-box;
-
-}
-
 div#sidebar {
 
     display: flex;
@@ -552,6 +537,14 @@ span.symbol2 {color: var(--acsent-color-2); font-size: 3.8vh; margin-right: 12px
 
 div#content {background-color: transparent;}
 
+div.blur {
+
+    border-radius: 2vh;
+    backdrop-filter: blur(1.2vh);
+    -webkit-backdrop-filter: blur(1.2vh);
+
+}
+
 div.tabs {
 
     width: 79vw;
@@ -614,8 +607,6 @@ div#box1 {
 
 @media screen and (max-width: 1580px) {
 
-    div#main {box-sizing: border-box;}
-
     nav#vert {width: 22vw;}
 
     div#school-brand2 {
@@ -670,7 +661,7 @@ div#box1 {
 
     div.tabs {
 
-        width: 74vw;
+        width: 72vw;
         height: 90dvh;
 
     }
@@ -725,7 +716,7 @@ div#box1 {
 
     }
 
-    ul#list-1 {margin: 15px 0 0 0; padding-left: calc(0.1vh + 0.95vw);}
+    ul#list-1 {margin: 15px 0 0 0; padding-left: calc(0.15vh + 1.15vw);}
 
     nav#vert {width: calc(5vh + 21vw);}
 
